@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -152,8 +153,13 @@ function repeatString(str, times) {
  *   removeFirstOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeFirstOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeFirstOccurrences() {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  if (str.indexOf(value) !== -1) {
+    return `${str.slice(0, str.indexOf(value))}${str.slice(
+      str.indexOf(value) + value.length
+    )}`;
+  }
+  return str;
 }
 
 /**
@@ -168,8 +174,13 @@ function removeFirstOccurrences() {
  *   removeLastOccurrences('I like legends', 'end') => 'I like legs'.
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
-function removeLastOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeLastOccurrences(str, value) {
+  if (str.lastIndexOf(value) !== -1) {
+    return `${str.slice(0, str.lastIndexOf(value))}${str.slice(
+      str.lastIndexOf(value) + value.length
+    )}`;
+  }
+  return str;
 }
 
 /**
